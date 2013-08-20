@@ -21,6 +21,7 @@ get_racket() {
   cd $dir
   git clone $RACKET_REPO 1>&2
   cd racket
+  git checkout stable
   echo `pwd`
 }
 
@@ -50,4 +51,4 @@ fi
 echo "-----> Creating racketapp From heroku-setup.rkt"
 cd $RACKET_DIR
 cd bin
-raco exe -o $BUILD_DIR/racketapp $BUILD_DIR/heroku-setup.rkt
+raco exe -o $BUILD_DIR/racketapp $BUILD_DIR/heroku-setup.rkt 
