@@ -26,7 +26,7 @@ get_racket() {
 
 build_racket() {
   dir=$1
-  cd $dir/src
+  cd $dir/racket/src
   rm -rf build
   mkdir build
   cd build
@@ -42,7 +42,7 @@ echo "-----> Building Racket Runtime Environment"
 
 RACKET_DIR=$(build_racket $(get_racket $(make_tempdir racket)))
 
-if [ ! -d $RACKET_DIR ] then
+if [ ! -d $RACKET_DIR ]; then
   echo "Fail" | indent
   exit 1
 fi
