@@ -47,8 +47,3 @@ if [ ! -d $RACKET_DIR ]; then
   echo "Fail" | indent
   exit 1
 fi
-
-echo "-----> Creating racketapp From heroku-setup.rkt"
-cd $RACKET_DIR
-cd bin
-raco exe -o $BUILD_DIR/racketapp $BUILD_DIR/heroku-setup.rkt 
